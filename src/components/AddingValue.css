@@ -1,0 +1,16 @@
+.todo_items{
+  height:38px;
+  width:300px;
+  border: 1px solid black;
+}
+.add_value{
+  display: flex;
+}
+.container{
+  height: 50px;
+  width: 200px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-evenly;
+
+}

@@ -1,25 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import AddingValue from './components/AddingValue';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Delete from './components/Delete';
+import Complete from './components/Complete';
+
+
 
 function App() {
+  <BrowserRouter>
+  <Routes>
+    <Route path="/delete" element={<Delete/>}></Route>
+    <Route path='/complete' element={<Complete/>}></Route>
+  </Routes>
+  </BrowserRouter>
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>Todo List</h2>
+      <AddingValue/>
+    
     </div>
   );
 }
+
 
 export default App;
