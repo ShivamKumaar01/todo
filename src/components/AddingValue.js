@@ -5,6 +5,7 @@ const AddingValue = () => {
   const [todoArray, setTodoArray] = useState([])
   const [deletedArray, setDeletedArray] = useState([])
   const [completedArray, setCompletedArray] = useState([])
+  const[task,setTask]=useState("");
   const [checked, setIsChecked] = useState(null)
 
   const handleSubmit = (e) => {
@@ -21,6 +22,7 @@ const AddingValue = () => {
 
     // todo_array.push(value)
     setTodoArray([...todoArray, value])
+    setTask("");
   }
   function checkHandler(e, index) {
     console.log(e)
@@ -28,14 +30,9 @@ const AddingValue = () => {
       // disable that button
     }
     setIsChecked(e.target.checked)
-    console.log('one button is checked')
-    console.log(e.target)
     const val=todoArray[index];
-    console.log("value is :")
-    console.log(val);
      setCompletedArray([...completedArray,val]);
-     console.log("this is completed array");
-     console.log(completedArray);
+     
   }
 
   function deleteHandler(e,index){
@@ -50,7 +47,7 @@ const AddingValue = () => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input type='text' name='task' />
+        <input type='text' name='task'value={task} onChange={(e)=>setTask(e.target.value)} />
         <button type='submit'>Submit</button>
       </form>
       <div className='all_value'>
